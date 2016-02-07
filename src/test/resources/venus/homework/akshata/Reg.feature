@@ -3,7 +3,7 @@ Feature: User Registration
     Given User on Registration page
     When User enters Personal details First name as Atal
     And Last Name as Vajpaye
-    And Email as AtalBihari@gmail.com
+    And Email as "AtalBihari@gmail.com"
     And UserName as AtalBP
     And Select Country as India
     And click on Newsletter checkbox

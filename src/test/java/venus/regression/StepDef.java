@@ -1,7 +1,9 @@
 package venus.regression;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -9,6 +11,8 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import java.util.Random;
 
 /**
  * Created by sriramangajala on 07/02/16.
@@ -30,80 +34,56 @@ public class StepDef {
         System.out.println("Post condition checks ......");
     }
 
-    @Given("^I am on a Registration Page$")
-    public void i_am_on_a_Registration_Page() throws Throwable {
+    @Given("^I am on a Registration Page blah$")
+    public void nonsense() throws Throwable {
+
         driver.findElement(By.className("ico-register")).click();
 
     }
 
+
     @When("^I enter the personal details as \"(.*?)\", \"(.*?)\",\"(.*?)\" and \"(.*?)\"$")
-    public void i_enter_the_personal_details_as_and(String arg1, String arg2, String arg3, String arg4) throws Throwable {
+    public void personalDetails(String First_Name, String Last_Name, String email, String Company_Name) throws Throwable {
+        Random random = new Random();
+        driver.findElement(By.id("FirstName")).sendKeys(First_Name);
+        driver.findElement(By.id("LastName")).sendKeys(Last_Name);
+        String emailId = random.nextInt()+email;
+        System.out.println(emailId);
+        driver.findElement(By.id("Email")).sendKeys(random.nextInt()+emailId);
+        driver.findElement(By.id("Company")).sendKeys(Company_Name);
 
     }
 
     @When("^An active Newsletter \"(.*?)\"$")
-    public void an_active_Newsletter(String arg1) throws Throwable {
+    public void an_active_Newsletter(String status) throws Throwable {
 
+       // if(driver.findElement(By.className("Newsletter")).getAttribute("checked")
     }
 
     @When("^Enter password as \"(.*?)\" and \"(.*?)\"$")
-    public void enter_password_as_and(String arg1, String arg2) throws Throwable {
-
+    public void enter_password_as_and(String password, String confirmPassword) throws Throwable {
+        driver.findElement(By.id("Password")).sendKeys(password);
+        driver.findElement(By.id("ConfirmPassword")).sendKeys(confirmPassword);
     }
+
 
     @When("^press Register$")
     public void press_Register() throws Throwable {
 
+        driver.findElement(By.id("register-button")).click();
+
     }
 
     @Then("^I should be able to see a message \"(.*?)\"$")
-    public void i_should_be_able_to_see_a_message(String arg1) throws Throwable {
+    public void i_should_be_able_to_see_a_message(String message) throws Throwable {
+
+        System.out.println(message);
+        String expected = message;
+        String actual = driver.findElement(By.className("result")).getText();
+
+        Assert.assertEquals(expected,actual);
 
     }
-
-    @Given("^consumer has an account$")
-    public void consumer_has_an_account() throws Throwable {
-
-    }
-
-    @When("^he tries to login to his account$")
-    public void he_tries_to_login_to_his_account() throws Throwable {
-
-    }
-
-    @Then("^should be able to login successfully$")
-    public void should_be_able_to_login_successfully() throws Throwable {
-
-    }
-
-    @Then("^his name should be see the first name$")
-    public void his_name_should_be_see_the_first_name() throws Throwable {
-
-    }
-
-    @Given("^I am on a Login Page$")
-    public void i_am_on_a_Login_Page() throws Throwable {
-
-    }
-
-    @When("^I enter details as \"(.*?)\" and \"(.*?)\"$")
-    public void i_enter_details_as_and(String arg1, String arg2) throws Throwable {
-
-    }
-
-    @When("^An active Remember me \"(.*?)\"$")
-    public void an_active_Remember_me(String arg1) throws Throwable {
-
-    }
-
-    @When("^press Login$")
-    public void press_Login() throws Throwable {
-
-    }
-
-
-
-
 
 
 }
