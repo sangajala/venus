@@ -1,8 +1,9 @@
+@reg
 
+      Feature: Order Details Page
 
-      Feature   : Order Details Page
-      Scenario  : Users ability to view the Order Details page
-         Given  : Iam in My Account with at least one completed order.
+      Scenario: Users ability to view the Order Details page
+         Given Iam in My Account with at least one completed order.
          When   : The user completes the Order successfully
          Then   : The user should be able view the Order Details with Order Number,Order Status,Order Date,Order Total
 

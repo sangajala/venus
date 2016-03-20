@@ -40,7 +40,7 @@ Scenario Outline  User should not be able to login with invalid email and passwo
     Given user should be on login page
     When user enters valid Email and Password
     And user  checks  Remember me box
-    Then user should login without filling password
+    Then user should login ---without filling password
 
 #    how do you prove this, the details should be written<class>
 

@@ -1,6 +1,7 @@
 package venus.regression;
 
 import cucumber.api.PendingException;
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -10,8 +11,10 @@ import cucumber.api.java.en.When;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
+import java.io.File;
 import java.util.Random;
 
 /**
@@ -85,5 +88,16 @@ public class StepDef {
 
     }
 
+
+    @After
+    public void takeSceenShotMethod(Scenario scenario)
+    {
+//        if(scenario.isFailed())
+//        {
+//            System.out.println("Scenario failed");
+////            File file = new Fil
+//            ((TakesScreenshot)driver).getScreenshotAs()
+//        }
+    }
 
 }
