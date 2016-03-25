@@ -1,5 +1,7 @@
 Feature: User should be able to access their account and save his activities
 
+#  sample
+
   @1
   Scenario Outline: User should be able to fill Registration Details
 
@@ -14,7 +16,7 @@ Feature: User should be able to access their account and save his activities
 
       | First_Name | Last_Name | email                 | Company_Name | Active | Password | ConfirmPassword | Message                      |
       | Varsha     | Tailor    | tailorvc@gmail.com    | Divine       | Active | xyz123   | xyz123          | Your registration completed  |
-#      | Vanessa    | Tailor    | tailorvc.uk@gmail.com | DivineGrace  | Non    | xyz_12   | xyz_23          | Your Registration Completed  |
+      | Vanessa    | Tailor    | tailorvc.uk@gmail.com | DivineGrace  | Non    | xyz_12   | xyz_23          | Your Registration Completed  |
 #      | Vanessa    |           | tailorvc.uk@gmail.com | DivineGrace  | Active | xyz_12   | xyz_23          | Please Enter Lastname        |
 #      |            | Tailor    | tailorvc.uk@gmail.com | DivineGrace  | Non    | xyz_12   | xyz_23          | Please Enter Firstname       |
 #      | Vanessa    | Tailor    | tailorvcgmail.com     | DivineGrace  | Active | xyz_12   | xyz_23          | Please Enter Valid Email     |
