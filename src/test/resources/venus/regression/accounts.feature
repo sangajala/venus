@@ -1,6 +1,6 @@
 Feature: User should be able to access their account and save his activities
 
-#  sample
+#  sample+++
 
   @1
   Scenario Outline: User should be able to fill Registration Details
